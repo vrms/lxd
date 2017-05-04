@@ -90,7 +90,6 @@ lxc storage edit [<remote>:]<pool>
 
 lxc storage <pool-name> btrfs.mount_options "<mount option>,<mount option>,<mount option>"
     add btrfs mount options to btrfs storage pool
-    EXAMPLE: lxc storage <pool-name> btrfs.mount_options "rw,nospace_cache,lazytime,user_subvol_rm_allowed,autodefrag"
 
 *Storage volumes*
 lxc storage volume list [<remote>:]<pool>
@@ -142,9 +141,13 @@ lxc storage volume show default data
     Will show the properties of a custom volume called "data" in the "default" pool.
 
 lxc storage volume show default container/data
-    Will show the properties of the filesystem for a container called "data" in the "default" pool.`)
-}
+    Will show the properties of the filesystem for a container called "data" in the "default" pool.
 
+lxc storage <pool-name> btrfs.mount_options "rw,autodefrag,compress=lvz"
+    will add the btrfs mount options "rw,autodefrag,compress=lvz" to the mentioned storage pool
+
+
+}
 func (c *storageCmd) flags() {}
 
 func (c *storageCmd) run(config *lxd.Config, args []string) error {
