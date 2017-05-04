@@ -143,11 +143,10 @@ lxc storage volume show default data
 lxc storage volume show default container/data
     Will show the properties of the filesystem for a container called "data" in the "default" pool.
 
-lxc storage <pool-name> btrfs.mount_options "rw,autodefrag,compress=lvz"
-    will add the btrfs mount options "rw,autodefrag,compress=lvz" to the mentioned storage pool
-
-
+lxc storage <pool-name> btrfs.mount_options "rw,user_subvol_rm_allowe,dautodefrag,compress=lzo"
+    will apply btrfs mount options "rw,user_subvol_rm_allowe,dautodefrag,compress=lzo" to the mentioned storage pool.`)
 }
+
 func (c *storageCmd) flags() {}
 
 func (c *storageCmd) run(config *lxd.Config, args []string) error {
