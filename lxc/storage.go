@@ -89,7 +89,7 @@ lxc storage edit [<remote>:]<pool>
     Edit storage pool, either by launching external editor or reading STDIN.
 
 lxc storage <pool-name> btrfs.mount_options "<mount option>,<mount option>,<mount option>"
-    add btrfs mount options to btrfs storage pool
+    Add btrfs mount options to a btrfs storage pool
 
 *Storage volumes*
 lxc storage volume list [<remote>:]<pool>
